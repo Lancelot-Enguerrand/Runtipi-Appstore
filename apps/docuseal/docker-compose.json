@@ -1,0 +1,47 @@
+{
+  "services": [
+    {
+      "name": "docuseal",
+      "image": "docuseal/docuseal:latest",
+      "isMain": true,
+      "internalPort": 3000,
+      "environment": {
+        "HOST": "${APP_DOMAIN}",
+        "DATABASE_URL": "postgresql://docuseal:${DOCUSEAL_DB_PASSWORD}@docuseal-db:5432/docuseal",
+        "SECRET_KEY_BASE": "${DOCUSEAL_SECRET_KEY}"
+      },
+      "dependsOn": {
+        "docuseal-db": {
+          "condition": "service_healthy"
+        }
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/app/docuseal",
+          "containerPath": "/data/docuseal"
+        }
+      ]
+    },
+    {
+      "name": "docuseal-db",
+      "image": "postgres:15",
+      "environment": {
+        "POSTGRES_USER": "docuseal",
+        "POSTGRES_PASSWORD": "${DOCUSEAL_DB_PASSWORD}",
+        "POSTGRES_DB": "docuseal"
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/app/pg_data",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ],
+      "healthCheck": {
+        "interval": "5s",
+        "timeout": "5s",
+        "retries": 5,
+        "test": "pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER"
+      }
+    }
+  ]
+}
