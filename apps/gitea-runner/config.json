@@ -1,0 +1,35 @@
+{
+  "$schema": "../schema.json",
+  "name": "Gitea Runner",
+  "available": true,
+  "no_gui": true,
+  "exposable": false,
+  "dynamic_config": true,
+  "port": 81080,
+  "id": "gitea-runner",
+  "tipi_version": 1,
+  "version": "0.2.11",
+  "categories": ["development", "automation"],
+  "description": "Act runner is a runner for Gitea based on Gitea fork of act.",
+  "short_desc": "Runner for Gitea",
+  "author": "Gitea",
+  "source": "https://gitea.com/gitea/act_runner",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Gitea instance URL",
+      "placeholder": "http://gitea",
+      "required": true,
+      "env_variable": "GITEA_INSTANCE_URL"
+    },
+    {
+      "type": "password",
+      "label": "Gitea runner registration token",
+      "required": true,
+      "env_variable": "GITEA_RUNNER_REGISTRATION_TOKEN"
+    }
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1737452289124,
+  "updated_at": 1737452289125
+}
