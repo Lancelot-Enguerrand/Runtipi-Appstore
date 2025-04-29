@@ -8,7 +8,7 @@
   "port": 8130,
   "id": "immich-kiosk",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v0.20.2",
   "categories": ["photography"],
   "description": "Lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
   "short_desc": "Slideshow for Immich",
