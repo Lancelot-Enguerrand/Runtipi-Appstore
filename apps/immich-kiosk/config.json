@@ -1,0 +1,41 @@
+{
+  "$schema": "../schema.json",
+  "name": "Immich Kiosk",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "force_pull": true,
+  "port": 8130,
+  "id": "immich-kiosk",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": ["photography"],
+  "description": "Lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
+  "short_desc": "Slideshow for Immich",
+  "author": "damongolding",
+  "source": "https://github.com/damongolding/immich-kiosk",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Immich Server URL",
+      "required": true,
+      "env_variable": "KIOSK_IMMICH_URL"
+    },
+    {
+      "type": "password",
+      "label": "Immich API Key",
+      "required": true,
+      "env_variable": "KIOSK_IMMICH_API_KEY"
+    },
+    {
+      "type": "password",
+      "label": "Password for Kiosk",
+      "required": false,
+      "env_variable": "KIOSK_PASSWORD",
+      "hint": "Leave empty to disable"
+    }
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1737452289124,
+  "updated_at": 1737452289125
+}

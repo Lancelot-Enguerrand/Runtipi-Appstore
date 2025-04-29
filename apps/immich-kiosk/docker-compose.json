@@ -1,0 +1,25 @@
+{
+  "$schema": "../dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "immich-kiosk",
+      "image": "ghcr.io/damongolding/immich-kiosk:latest",
+      "isMain": true,
+      "internalPort": 3000,
+      "environment": {
+        "TZ": "${TZ}",
+        "KIOSK_IMMICH_API_KEY": "${KIOSK_IMMICH_API_KEY}",
+        "KIOSK_IMMICH_URL": "${KIOSK_IMMICH_URL}",
+        "KIOSK_IMMICH_EXTERNAL_URL": "${KIOSK_IMMICH_EXTERNAL_URL}",
+        "KIOSK_PASSWORD": "${KIOSK_PASSWORD}",
+        "KIOSK_PORT": 3000
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/config.yaml",
+          "containerPath": "/config.yaml"
+        }
+      ]
+    }
+  ]
+}
