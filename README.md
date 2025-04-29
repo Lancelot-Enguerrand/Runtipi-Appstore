@@ -5,7 +5,7 @@ It contains a variety of apps.
 I keep the apps configurations as simple as possible to let anyone try.
 You can safely add it to your appstores.
 
-## Apps available (5)
+## Apps available (3)
 
 | Logo                                                                     | Name                                                         | Description                                  |
 | :----------------------------------------------------------------------: | ------------------------------------------------------------ | -------------------------------------------- |
