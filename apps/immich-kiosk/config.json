@@ -25,13 +25,6 @@
       "label": "Immich API Key",
       "required": true,
       "env_variable": "KIOSK_IMMICH_API_KEY"
-    },
-    {
-      "type": "password",
-      "label": "Password for Kiosk",
-      "required": false,
-      "env_variable": "KIOSK_PASSWORD",
-      "hint": "Leave empty to disable"
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
