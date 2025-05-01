@@ -7,7 +7,7 @@
   "port": 8130,
   "id": "immich-kiosk",
   "tipi_version": 1,
-  "version": "v0.20.2",
+  "version": "0.20.2",
   "categories": ["photography"],
   "description": "Lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
   "short_desc": "Slideshow for Immich",
@@ -25,6 +25,13 @@
       "label": "Immich API Key",
       "required": true,
       "env_variable": "KIOSK_IMMICH_API_KEY"
+    },
+    {
+      "type": "password",
+      "label": "Password for Kiosk",
+      "required": false,
+      "env_variable": "KIOSK_PASSWORD",
+      "hint": "Leave empty to disable"
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
