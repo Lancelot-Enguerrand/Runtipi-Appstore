@@ -4,7 +4,6 @@
   "available": true,
   "exposable": true,
   "dynamic_config": true,
-  "force_pull": true,
   "port": 8130,
   "id": "immich-kiosk",
   "tipi_version": 1,
