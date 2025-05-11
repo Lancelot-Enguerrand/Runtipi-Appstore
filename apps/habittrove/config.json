@@ -6,9 +6,12 @@
   "dynamic_config": true,
   "port": 41113,
   "id": "habittrove",
-  "tipi_version": 1,
-  "version": "v0.2.10",
-  "categories": ["data", "utilities"],
+  "tipi_version": 2,
+  "version": "v0.2.11",
+  "categories": [
+    "data",
+    "utilities"
+  ],
   "description": "HabitTrove is a gamified habit tracking application that helps you build and maintain positive habits by rewarding you with coins, which you can use to exchange for rewards.",
   "short_desc": "Gamified habit tracking",
   "author": "https://github.com/dohsimpson",
@@ -21,7 +24,10 @@
       "env_variable": "HABITTROVE_AUTH_SECRET"
     }
   ],
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1737452289124,
-  "updated_at": 1740223829999
+  "updated_at": 1746930792160
 }
