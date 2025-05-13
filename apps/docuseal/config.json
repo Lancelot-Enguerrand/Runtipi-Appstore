@@ -6,9 +6,11 @@
   "dynamic_config": true,
   "port": 5341,
   "id": "docuseal",
-  "tipi_version": 1,
-  "version": "1.9.9",
-  "categories": ["utilities"],
+  "tipi_version": 2,
+  "version": "1.9.10",
+  "categories": [
+    "utilities"
+  ],
   "description": "DocuSeal is an open source platform that provides secure and efficient digital document signing and processing. Create PDF forms to have them filled and signed online on any device with an easy-to-use, mobile-optimized web tool.",
   "short_desc": "Digital document signing and processing",
   "author": "docusealco",
@@ -31,7 +33,10 @@
       "env_variable": "DOCUSEAL_SECRET_KEY"
     }
   ],
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1737452289124,
-  "updated_at": 1737452289124
+  "updated_at": 1747103600393
 }
