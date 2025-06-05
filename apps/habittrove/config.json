@@ -6,8 +6,8 @@
   "dynamic_config": true,
   "port": 41113,
   "id": "habittrove",
-  "tipi_version": 11,
-  "version": "v0.2.22",
+  "tipi_version": 12,
+  "version": "v0.2.23",
   "categories": [
     "data",
     "utilities"
@@ -29,5 +29,5 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1748658754728
+  "updated_at": 1749090785010
 }
