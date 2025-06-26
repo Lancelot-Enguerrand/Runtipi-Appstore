@@ -6,9 +6,12 @@
   "exposable": false,
   "dynamic_config": true,
   "id": "gitea-runner",
-  "tipi_version": 1,
-  "version": "0.2.11",
-  "categories": ["development", "automation"],
+  "tipi_version": 2,
+  "version": "0.2.12",
+  "categories": [
+    "development",
+    "automation"
+  ],
   "description": "Act runner is a runner for Gitea based on Gitea fork of act.",
   "short_desc": "Runner for Gitea",
   "author": "Gitea",
@@ -28,7 +31,10 @@
       "env_variable": "GITEA_RUNNER_REGISTRATION_TOKEN"
     }
   ],
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1737452289124,
-  "updated_at": 1737452289125
+  "updated_at": 1750905244314
 }
