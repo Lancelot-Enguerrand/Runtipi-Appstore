@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/damongolding/immich-kiosk/main/config.schema.json
 ## Clock
 show_time: false
 time_format: 24 # 12 or 24
@@ -6,7 +7,7 @@ date_format: YYYY/MM/DD
 clock_source: client
 
 ## Kiosk behaviour
-refresh: 60 # in seconds
+duration: 60 # in seconds
 disable_screensaver: false # Ask browser to request a lock that prevents device screens from dimming or locking.
 optimize_images: false # Whether Kiosk should resize images to match your browser screen dimensions for better performance.
 use_gpu: true # Enable GPU acceleration for improved performance.
@@ -15,13 +16,13 @@ use_gpu: true # Enable GPU acceleration for improved performance.
 show_archived: false # Allow assets marked as archived to be displayed.
 
 ## ID(s) of person or people to display
-person:
+people:
   - "PERSON_ID"
 excluded_people:
   - "PERSON_ID"
 
 ## ID(s) of album or albums to display
-album:
+albums:
   - "ALBUM_ID"
 ## Album IDs to exclude from being shown. Albums in this list will be filtered from
 ## appearing in the frame even if they are included in the 'album' list.
@@ -30,11 +31,11 @@ excluded_albums:
   - "ALBUM_ID"
 
 ## Date range or ranges to display
-date:
+dates:
   - "YYYY-MM-DD_to_YYYY-MM-DD"
 
 ## Value(s) of tag(s) to display
-tag:
+tags:
   - "TAG_VALUE"
 
 memories: false # show memories
@@ -42,8 +43,12 @@ memories: false # show memories
 ## Filters
 # date_filter: last-30-days # only applies to people and random assets
 
-## Experimental
-experimental_album_video: false
+## Live Photos
+live_photos: false # enable/disable live photos
+live_photo_loop_delay: 0 # the delay in seconds between each live photo replay
+
+## Video
+album_video: false
 
 ## UI
 disable_ui: false # this is just a shortcut for all ui elements (show_time, show_date, show_image_time, show_image_date)
@@ -66,7 +71,7 @@ fade_transition_duration: 1 # in seconds
 cross_fade_transition_duration: 1 # in seconds
 
 ## Image display settings
-show_progress: false # display a progress bar
+show_progress_bar: false # display a progress bar
 image_fit: contain # none | contain | cover
 image_effect: none # none | zoom | smart-zoom
 image_effect_amount: 120
@@ -75,6 +80,7 @@ use_original_image: false # use the original file.
 ## Image METADATA
 show_album_name: false
 show_person_name: false
+show_person_age: false
 show_image_time: false
 image_time_format: 24 # 12 or 24
 show_image_date: false
@@ -105,6 +111,13 @@ hide_button_action: tag # tag, archive, or both [tag, archive]
 # immich_users_api_keys:
 #   user1: ""
 # show_user: false # show user name
+
+## Offline mode
+offline_mode:
+  enabled: false
+  number_of_assets: 500
+  max_size: 50mb
+  expiration_hours: 24
 
 ## Options that can NOT be changed via url params
 kiosk:
