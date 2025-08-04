@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.runtipi.io/dynamic-compose.json",
+  "services": [
+    {
+      "name": "immich-powertools",
+      "image": "ghcr.io/varun-raj/immich-power-tools:0.17.0",
+      "isMain": true,
+      "internalPort": 3000,
+      "environment": {
+        "TZ": "${TZ}",
+        "IMMICH_API_KEY": "${POWERTOOLS_IMMICH_API_KEY}",
+        "MMICH_URL": "${POWERTOOLS_IMMICH_URL}",
+        "GOOGLE_MAPS_API_KEY": "${POWERTOOLS_GOOGLE_MAPS_API_KEY}",
+        "GEMINI_API_KEY": "${POWERTOOLS_GEMINI_API_KEY}"
+      }
+    }
+  ]
+}

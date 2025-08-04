@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Immich Power Tools",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8131,
+  "id": "immich-powertools",
+  "tipi_version": 1,
+  "version": "0.17.0",
+  "categories": [
+    "photography"
+  ],
+  "description": "Power tools for organizing your immich library ",
+  "short_desc": "Tools for Immich",
+  "author": "varun-raj",
+  "source": "https://github.com/varun-raj/immich-power-tools",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Immich Server URL",
+      "required": true,
+      "env_variable": "POWERTOOLS_IMMICH_URL"
+    },
+    {
+      "type": "password",
+      "label": "Immich API Key",
+      "required": true,
+      "env_variable": "POWERTOOLS_IMMICH_API_KEY"
+    },
+    {
+      "type": "password",
+      "label": "Google Maps API Key",
+      "required": false,
+      "env_variable": "POWERTOOLS_GOOGLE_MAPS_API_KEY"
+    },
+    {
+      "type": "password",
+      "label": "Gemini API Key",
+      "required": false,
+      "env_variable": "POWERTOOLS_GEMINI_API_KEY"
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1754307934999,
+  "updated_at": 1754307935000
+}
