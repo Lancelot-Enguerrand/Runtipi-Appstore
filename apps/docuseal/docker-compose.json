@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "docuseal",
-      "image": "docuseal/docuseal:2.1.0",
+      "image": "docuseal/docuseal:2.1.1",
       "isMain": true,
       "internalPort": 3000,
       "environment": {
