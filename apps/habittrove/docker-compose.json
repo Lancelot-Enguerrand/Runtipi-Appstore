@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "habittrove",
-      "image": "dohsimpson/habittrove:v0.2.24",
+      "image": "dohsimpson/habittrove:v0.2.28",
       "isMain": true,
       "internalPort": 3000,
       "environment": {
