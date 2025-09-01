@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "GLPI",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 6741,
+  "id": "glpi",
+  "tipi_version": 1,
+  "version": "10.0.19",
+  "categories": [
+    "data",
+    "utilities"
+  ],
+  "description": "GLPI stands for Gestionnaire Libre de Parc Informatique is a Free Asset and IT Management Software package, that provides ITIL Service Desk features, licenses tracking and software auditing.",
+  "short_desc": "Asset and IT Management Software",
+  "author": "GLPI",
+  "source": "https://github.com/glpi-project/glpi",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "GLPI Database password",
+      "required": false,
+      "min": 32,
+      "max": 32,
+      "env_variable": "GLPI_DB_PASSWORD"
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1756757969999,
+  "updated_at": 1756757970000
+}
