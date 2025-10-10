@@ -6,8 +6,8 @@
   "dynamic_config": true,
   "port": 6741,
   "id": "glpi",
-  "tipi_version": 2,
-  "version": "11.0.0",
+  "tipi_version": 3,
+  "version": "11.0.1",
   "categories": [
     "data",
     "utilities"
@@ -31,5 +31,5 @@
     "amd64"
   ],
   "created_at": 1756757969999,
-  "updated_at": 1759650055555
+  "updated_at": 1760063277074
 }
