@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "glpi",
-      "image": "ghcr.io/glpi-project/glpi:11.0.0",
+      "image": "ghcr.io/glpi-project/glpi:11.0.1",
       "isMain": true,
       "internalPort": 80,
       "environment": {
