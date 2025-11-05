@@ -1,17 +1,19 @@
 {
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
       "name": "glpi",
       "image": "ghcr.io/glpi-project/glpi:11.0.1",
       "isMain": true,
       "internalPort": 80,
-      "environment": {
-        "GLPI_DB_HOST": "glpi-db",
-        "GLPI_DB_PORT": "3306",
-        "GLPI_DB_NAME": "glpi",
-        "GLPI_DB_USER": "glpi",
-        "GLPI_DB_PASSWORD": "${GLPI_DB_PASSWORD}"
-      },
+      "environment": [
+        { "key": "GLPI_DB_HOST", "value": "glpi-db" },
+        { "key": "GLPI_DB_PORT", "value": "3306" },
+        { "key": "GLPI_DB_NAME", "value": "glpi" },
+        { "key": "GLPI_DB_USER", "value": "glpi" },
+        { "key": "GLPI_DB_PASSWORD", "value": "${GLPI_DB_PASSWORD}" }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/glpi",
@@ -22,12 +24,12 @@
     {
       "name": "glpi-db",
       "image": "mysql",
-      "environment": {
-        "MYSQL_RANDOM_ROOT_PASSWORD": "yes",
-        "MYSQL_DATABASE": "glpi",
-        "MYSQL_USER": "glpi",
-        "MYSQL_PASSWORD": "${GLPI_DB_PASSWORD}"
-      },
+      "environment": [
+        { "key": "MYSQL_RANDOM_ROOT_PASSWORD", "value": "yes" },
+        { "key": "MYSQL_DATABASE", "value": "glpi" },
+        { "key": "MYSQL_USER", "value": "glpi" },
+        { "key": "MYSQL_PASSWORD", "value": "${GLPI_DB_PASSWORD}" }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/db",

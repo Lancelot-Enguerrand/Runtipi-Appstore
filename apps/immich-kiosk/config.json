@@ -1,15 +1,15 @@
 {
-  "$schema": "../schema.json",
+  "$schema": "https://schemas.runtipi.io/app-info.json",
   "name": "Immich Kiosk",
   "available": true,
   "exposable": true,
   "dynamic_config": true,
   "port": 8130,
   "id": "immich-kiosk",
-  "tipi_version": 17,
+  "tipi_version": 18,
   "version": "0.26.1",
   "categories": [
-    "photography"
+    "photography", "media"
   ],
   "description": "Lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
   "short_desc": "Slideshow for Immich",
@@ -41,5 +41,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1761186565255
+  "updated_at": 1762380733433,
+  "min_tipi_version": "4.5.0"
 }

@@ -1,12 +1,12 @@
 {
-  "$schema": "../schema.json",
+  "$schema": "https://schemas.runtipi.io/app-info.json",
   "name": "Habit Trove",
   "available": true,
   "exposable": true,
   "dynamic_config": true,
   "port": 41113,
   "id": "habittrove",
-  "tipi_version": 15,
+  "tipi_version": 16,
   "version": "v0.2.29",
   "categories": [
     "data",
@@ -29,5 +29,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1755916136273
+  "updated_at": 1755916136273,
+  "min_tipi_version": "4.5.0"
 }

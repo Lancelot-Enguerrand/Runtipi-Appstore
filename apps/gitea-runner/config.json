@@ -1,12 +1,12 @@
 {
-  "$schema": "../schema.json",
+  "$schema": "https://schemas.runtipi.io/app-info.json",
   "name": "Gitea Runner",
   "available": true,
   "no_gui": true,
   "exposable": false,
   "dynamic_config": true,
   "id": "gitea-runner",
-  "tipi_version": 3,
+  "tipi_version": 4,
   "version": "0.2.13",
   "categories": [
     "development",
@@ -36,5 +36,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1756520780338
+  "updated_at": 1762380733433,
+  "min_tipi_version": "4.5.0"
 }

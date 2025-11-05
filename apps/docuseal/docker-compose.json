@@ -1,15 +1,17 @@
 {
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
       "name": "docuseal",
       "image": "docuseal/docuseal:2.2.0",
       "isMain": true,
       "internalPort": 3000,
-      "environment": {
-        "HOST": "${APP_DOMAIN}",
-        "DATABASE_URL": "postgresql://docuseal:${DOCUSEAL_DB_PASSWORD}@docuseal-db:5432/docuseal",
-        "SECRET_KEY_BASE": "${DOCUSEAL_SECRET_KEY}"
-      },
+      "environment": [
+        { "key": "HOST", "value": "${APP_DOMAIN}" },
+        { "key": "DATABASE_URL", "value": "postgresql://docuseal:${DOCUSEAL_DB_PASSWORD}@docuseal-db:5432/docuseal" },
+        { "key": "SECRET_KEY_BASE", "value": "${DOCUSEAL_SECRET_KEY}" }
+      ],
       "dependsOn": {
         "docuseal-db": {
           "condition": "service_healthy"
@@ -25,11 +27,11 @@
     {
       "name": "docuseal-db",
       "image": "postgres:15",
-      "environment": {
-        "POSTGRES_USER": "docuseal",
-        "POSTGRES_PASSWORD": "${DOCUSEAL_DB_PASSWORD}",
-        "POSTGRES_DB": "docuseal"
-      },
+      "environment": [
+        { "key": "POSTGRES_USER", "value": "docuseal" },
+        { "key": "POSTGRES_PASSWORD", "value": "${DOCUSEAL_DB_PASSWORD}" },
+        { "key": "POSTGRES_DB", "value": "docuseal" }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/app/pg_data",

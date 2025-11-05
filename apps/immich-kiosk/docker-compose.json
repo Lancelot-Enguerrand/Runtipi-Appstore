@@ -1,18 +1,19 @@
 {
-  "$schema": "../dynamic-compose-schema.json",
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
       "name": "immich-kiosk",
       "image": "ghcr.io/damongolding/immich-kiosk:0.26.1",
       "isMain": true,
       "internalPort": 3000,
-      "environment": {
-        "TZ": "${TZ}",
-        "KIOSK_IMMICH_API_KEY": "${KIOSK_IMMICH_API_KEY}",
-        "KIOSK_IMMICH_URL": "${KIOSK_IMMICH_URL}",
-        "KIOSK_PASSWORD": "${KIOSK_PASSWORD}",
-        "KIOSK_PORT": 3000
-      },
+      "environment": [
+        {"key": "TZ", "value": "${TZ}" },
+        {"key": "KIOSK_IMMICH_API_KEY", "value": "${KIOSK_IMMICH_API_KEY}" },
+        {"key": "KIOSK_IMMICH_URL", "value": "${KIOSK_IMMICH_URL}" },
+        {"key": "KIOSK_PASSWORD", "value": "${KIOSK_PASSWORD}" },
+        {"key": "KIOSK_PORT", "value": 3000 }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/config.yaml",
