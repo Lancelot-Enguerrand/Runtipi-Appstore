@@ -6,8 +6,8 @@
   "dynamic_config": true,
   "port": 8130,
   "id": "immich-kiosk",
-  "tipi_version": 19,
-  "version": "0.27.0",
+  "tipi_version": 20,
+  "version": "0.27.1",
   "categories": [
     "photography",
     "media"
@@ -29,7 +29,7 @@
       "label": "Immich API Key",
       "required": true,
       "hint": "https://api.immich.app/getting-started",
-      "env_variable": "KIOSK_IMMICH_API_KEY"      
+      "env_variable": "KIOSK_IMMICH_API_KEY"
     },
     {
       "type": "boolean",
@@ -53,6 +53,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1762828323524,
+  "updated_at": 1762874209120,
   "min_tipi_version": "4.5.0"
 }
