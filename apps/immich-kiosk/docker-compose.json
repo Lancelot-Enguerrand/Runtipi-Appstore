@@ -4,13 +4,14 @@
   "services": [
     {
       "name": "immich-kiosk",
-      "image": "ghcr.io/damongolding/immich-kiosk:0.26.1",
+      "image": "ghcr.io/damongolding/immich-kiosk:0.27.0",
       "isMain": true,
       "internalPort": 3000,
       "environment": [
         {"key": "TZ", "value": "${TZ}" },
         {"key": "KIOSK_IMMICH_API_KEY", "value": "${KIOSK_IMMICH_API_KEY}" },
         {"key": "KIOSK_IMMICH_URL", "value": "${KIOSK_IMMICH_URL}" },
+        {"key": "KIOSK_ENABLE_URL_BUILDER", "value": "${KIOSK_ENABLE_URL_BUILDER}" },
         {"key": "KIOSK_PASSWORD", "value": "${KIOSK_PASSWORD}" },
         {"key": "KIOSK_PORT", "value": 3000 }
       ],

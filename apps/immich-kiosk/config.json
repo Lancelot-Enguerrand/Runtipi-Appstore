@@ -6,10 +6,11 @@
   "dynamic_config": true,
   "port": 8130,
   "id": "immich-kiosk",
-  "tipi_version": 18,
-  "version": "0.26.1",
+  "tipi_version": 19,
+  "version": "0.27.0",
   "categories": [
-    "photography", "media"
+    "photography",
+    "media"
   ],
   "description": "Lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
   "short_desc": "Slideshow for Immich",
@@ -19,6 +20,7 @@
     {
       "type": "text",
       "label": "Immich Server URL",
+      "placeholder": "http://immich:2283",
       "required": true,
       "env_variable": "KIOSK_IMMICH_URL"
     },
@@ -26,13 +28,23 @@
       "type": "password",
       "label": "Immich API Key",
       "required": true,
-      "env_variable": "KIOSK_IMMICH_API_KEY"
+      "hint": "https://api.immich.app/getting-started",
+      "env_variable": "KIOSK_IMMICH_API_KEY"      
+    },
+    {
+      "type": "boolean",
+      "label": "Enable URL builder",
+      "required": false,
+      "default": false,
+      "env_variable": "KIOSK_ENABLE_URL_BUILDER",
+      "hint": "Enable the URL builder endpoint at /url-builder"
     },
     {
       "type": "password",
       "label": "Password for Kiosk",
       "required": false,
       "env_variable": "KIOSK_PASSWORD",
+      "placeholder": "Leave empty to disable",
       "hint": "Leave empty to disable"
     }
   ],
@@ -41,6 +53,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1762380733433,
+  "updated_at": 1762828323524,
   "min_tipi_version": "4.5.0"
 }
