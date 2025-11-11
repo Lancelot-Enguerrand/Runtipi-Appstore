@@ -20,6 +20,7 @@
     {
       "type": "text",
       "label": "Immich Server URL",
+      "placeholder": "http://immich:2283",
       "required": true,
       "env_variable": "KIOSK_IMMICH_URL"
     },
@@ -27,13 +28,23 @@
       "type": "password",
       "label": "Immich API Key",
       "required": true,
-      "env_variable": "KIOSK_IMMICH_API_KEY"
+      "hint": "https://api.immich.app/getting-started",
+      "env_variable": "KIOSK_IMMICH_API_KEY"      
+    },
+    {
+      "type": "boolean",
+      "label": "Enable URL builder",
+      "required": false,
+      "default": false,
+      "env_variable": "KIOSK_ENABLE_URL_BUILDER",
+      "hint": "Enable the URL builder endpoint at /url-builder"
     },
     {
       "type": "password",
       "label": "Password for Kiosk",
       "required": false,
       "env_variable": "KIOSK_PASSWORD",
+      "placeholder": "Leave empty to disable",
       "hint": "Leave empty to disable"
     }
   ],

@@ -11,6 +11,7 @@
         {"key": "TZ", "value": "${TZ}" },
         {"key": "KIOSK_IMMICH_API_KEY", "value": "${KIOSK_IMMICH_API_KEY}" },
         {"key": "KIOSK_IMMICH_URL", "value": "${KIOSK_IMMICH_URL}" },
+        {"key": "KIOSK_ENABLE_URL_BUILDER", "value": "${KIOSK_ENABLE_URL_BUILDER}" },
         {"key": "KIOSK_PASSWORD", "value": "${KIOSK_PASSWORD}" },
         {"key": "KIOSK_PORT", "value": 3000 }
       ],
