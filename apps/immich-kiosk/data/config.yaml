@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/damongolding/immich-kiosk/main/config.schema.json
+
 ## Clock
 show_time: false
 time_format: 24 # 12 or 24
@@ -18,15 +19,16 @@ show_archived: false # Allow assets marked as archived to be displayed.
 ## ID(s) of person or people to display
 people:
   - "PERSON_ID"
+require_all_people: false # When true, only show images containing all specified people together
 excluded_people:
   - "PERSON_ID"
 
 ## ID(s) of album or albums to display
 albums:
   - "ALBUM_ID"
-## Album IDs to exclude from being shown. Albums in this list will be filtered from
-## appearing in the frame even if they are included in the 'album' list.
 album_order: random # random | newest | oldest
+# Album IDs to exclude from being shown. Albums in this list will be filtered from
+# appearing in the frame even if they are included in the 'album' list.
 excluded_albums:
   - "ALBUM_ID"
 
@@ -37,22 +39,22 @@ dates:
 ## Value(s) of tag(s) to display
 tags:
   - "TAG_VALUE"
+excluded_tags:
+  - "TAG_VALUE"
+
+excluded_partners:
+  - "PARTNER_ID"
 
 memories: false # show memories
 
 ## Filters
 # date_filter: last-30-days # only applies to people and random assets
 
-## Live Photos
-live_photos: false # enable/disable live photos
-live_photo_loop_delay: 0 # the delay in seconds between each live photo replay
-
-## Video
-album_video: false
-
 ## UI
+show_progress_bar: false # display a progress bar
 disable_ui: false # this is just a shortcut for all ui elements (show_time, show_date, show_image_time, show_image_date)
 frameless: false # remove border around image and rounded corners.
+frame_padding: 0 # padding (px) around the edge of Kiosk; accepts integer or array [top, right, bottom, left]
 hide_cursor: false # Hide cursor/mouse via CSS.
 font_size: 100 # the base font size as a percentage. OMIT the % character
 background_blur: true # display a blurred version of image as background
@@ -63,6 +65,7 @@ layout: single # which layout to use. single | splitview | splitview-landscape |
 ## Sleep mode
 # sleep_start: 22 # sleep mode start time
 # sleep_end: 7 # sleep mode end time
+# sleep_dim_screen: false # dim screen when sleep mode is active (only works with Fully Kiosk Browser)
 sleep_icon: true
 
 ## Transition options
@@ -71,13 +74,18 @@ fade_transition_duration: 1 # in seconds
 cross_fade_transition_duration: 1 # in seconds
 
 ## Image display settings
-show_progress_bar: false # display a progress bar
 image_fit: contain # none | contain | cover
 image_effect: none # none | zoom | smart-zoom
 image_effect_amount: 120
 use_original_image: false # use the original file.
 
+## Video
+show_videos: false
+live_photos: false
+live_photo_loop_delay: 0
+
 ## Image METADATA
+show_owner: false # show the owner of the image
 show_album_name: false
 show_person_name: false
 show_person_age: false
@@ -88,6 +96,7 @@ image_date_format: YYYY-MM-DD
 show_image_description: false
 show_image_exif: false
 show_image_location: false
+show_image_qr: false
 hide_countries:
   - "country to hide"
 show_image_id: false
@@ -106,6 +115,13 @@ hide_button_action: tag # tag, archive, or both [tag, archive]
 #     api: ""
 #     unit: metric
 #     lang: en
+#     forecast: false
+#     default: false
+
+## Add iframes into Kiosk - you can use local files or remote URLs
+#iframe:
+# - https://iframe.immichkiosk.app/pokemon
+# - ./iframes/pokemon.html
 
 ## Immich API keys for specific users
 # immich_users_api_keys:
@@ -113,17 +129,24 @@ hide_button_action: tag # tag, archive, or both [tag, archive]
 # show_user: false # show user name
 
 ## Offline mode
-offline_mode:
-  enabled: false
-  number_of_assets: 500
-  max_size: 50mb
-  expiration_hours: 24
+# offline_mode:
+#   enabled: false
+#   number_of_assets: 100
+#   max_size: 0
+#   parallel_downloads: 4
+#   expiration_hours: 0
 
 ## Options that can NOT be changed via url params
 kiosk:
+  port: 3000
+  behind_proxy: false
+  disable_url_queries: false
+  disable_config_endpoint: false
+  #enable_url_builder: false
   watch_config: false
   fetched_assets_size: 1000
   http_timeout: 20
+  #password: ""
   cache: true # cache select api calls
-  pre_fetch: true # fetch assets in the background
+  prefetch: true # fetch assets in the background
   asset_weighting: true # use weighting when picking assets
