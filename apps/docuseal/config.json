@@ -6,8 +6,8 @@
   "dynamic_config": true,
   "port": 5341,
   "id": "docuseal",
-  "tipi_version": 25,
-  "version": "2.2.2",
+  "tipi_version": 26,
+  "version": "2.2.3",
   "categories": [
     "utilities"
   ],
@@ -38,6 +38,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1763433068000,
+  "updated_at": 1764037882838,
   "min_tipi_version": "4.5.0"
 }
