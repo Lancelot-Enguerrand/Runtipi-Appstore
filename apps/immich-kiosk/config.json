@@ -6,8 +6,8 @@
   "dynamic_config": true,
   "port": 8130,
   "id": "immich-kiosk",
-  "tipi_version": 28,
-  "version": "0.30.2",
+  "tipi_version": 29,
+  "version": "0.31.0",
   "categories": [
     "photography",
     "media"
@@ -53,6 +53,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1768444649176,
+  "updated_at": 1769135913396,
   "min_tipi_version": "4.5.0"
 }
