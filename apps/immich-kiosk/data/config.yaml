@@ -83,6 +83,7 @@ use_original_image: false # use the original file.
 show_videos: false
 live_photos: false
 live_photo_loop_delay: 0
+#exclude_videos_over: 120 # Exclude videos longer than 2 minutes
 
 ## Image METADATA
 show_owner: false # show the owner of the image
@@ -150,3 +151,4 @@ kiosk:
   cache: true # cache select api calls
   prefetch: true # fetch assets in the background
   asset_weighting: true # use weighting when picking assets
+
