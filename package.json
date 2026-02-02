@@ -12,7 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/node": "^25.1.0"
+    "@types/node": "^25.1.0",
+    "arktype": "^2.1.29"
   },
   "dependencies": {
     "@runtipi/common": "^1.1.3",
