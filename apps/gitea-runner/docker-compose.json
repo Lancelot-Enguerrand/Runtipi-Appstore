@@ -4,7 +4,7 @@
   "services": [
     {
       "name": "gitea-runner",
-      "image": "docker.gitea.com/act_runner:0.2.13",
+      "image": "docker.gitea.com/act_runner:0.3.0",
       "environment": [
         { "key": "GITEA_INSTANCE_URL", "value": "${GITEA_INSTANCE_URL:-http://gitea}" },
         { "key": "GITEA_RUNNER_REGISTRATION_TOKEN", "value": "${GITEA_RUNNER_REGISTRATION_TOKEN}" },
