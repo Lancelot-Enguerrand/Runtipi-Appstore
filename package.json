@@ -13,7 +13,7 @@
   "devDependencies": {
     "@types/bun": "latest",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^22.14.1",
+    "@types/node": "^24.13.1",
     "arktype": "^2.1.29"
   },
   "dependencies": {
