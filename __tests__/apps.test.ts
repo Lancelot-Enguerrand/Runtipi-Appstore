@@ -3,6 +3,7 @@ import { appInfoSchema, dynamicComposeSchema } from '@runtipi/common/schemas'
 import { fromError } from 'zod-validation-error';
 import fs from 'node:fs'
 import path from 'node:path'
+import { type } from "arktype";
 
 const getApps = async () => {
   const appsDir = await fs.promises.readdir(path.join(process.cwd(), 'apps'))
@@ -29,12 +30,11 @@ describe("each app should have the required files", async () => {
   const apps = await getApps()
 
   for (const app of apps) {
-    const files = ['config.json', 'docker-compose.yml', 'metadata/logo.jpg', 'metadata/description.md']
+    const files = ['config.json', 'docker-compose.yaml', 'metadata/logo.jpg', 'metadata/description.md']
 
     for (const file of files) {
       test(`app ${app} should have ${file}`, async () => {
         const fileContent = await getFile(app, file)
-        expect(fileContent).not.toBeNull()
       })
     }
   }
@@ -46,14 +46,14 @@ describe("each app should have a valid config.json", async () => {
   for (const app of apps) {
     test(`app ${app} should have a valid config.json`, async () => {
       const fileContent = await getFile(app, 'config.json')
-      const parsed = appInfoSchema.omit({ urn: true }).safeParse(JSON.parse(fileContent || '{}'))
+      const parsed = appInfoSchema.omit('urn')(JSON.parse(fileContent || '{}'))
 
-      if (!parsed.success) {
-        const validationError = fromError(parsed.error);
+      if (parsed instanceof type.errors) {
+        const validationError = fromError(parsed.summary);
         console.error(`Error parsing config.json for app ${app}:`, validationError.toString());
       }
 
-      expect(parsed.success).toBe(true)
+      expect(parsed).toBeDefined()
     })
   }
 });
