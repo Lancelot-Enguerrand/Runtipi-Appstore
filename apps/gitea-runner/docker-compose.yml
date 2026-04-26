@@ -1,0 +1,13 @@
+services:
+  gitea-runner:
+    image: 'docker.gitea.com/act_runner:0.4.1'
+    volumes:
+      - '${APP_DATA_DIR}/data/config:/config'
+      - '${APP_DATA_DIR}/data/data:/data'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    environment:
+      - 'GITEA_INSTANCE_URL=${GITEA_INSTANCE_URL:-http://gitea}'
+      - 'GITEA_RUNNER_REGISTRATION_TOKEN=${GITEA_RUNNER_REGISTRATION_TOKEN}'
+      - 'GITEA_RUNNER_NAME=gitea-runner'
+x-runtipi:
+  schema_version: 2

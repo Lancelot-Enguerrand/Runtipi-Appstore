@@ -1,0 +1,12 @@
+services:
+  habittrove:
+    image: 'dohsimpson/habittrove:v0.2.31'
+    volumes:
+      - '${APP_DATA_DIR}/data/app:/app/data'
+    environment:
+      - 'AUTH_SECRET=${HABITTROVE_AUTH_SECRET}'
+    x-runtipi:
+      internal_port: 3000
+      is_main: true
+x-runtipi:
+  schema_version: 2

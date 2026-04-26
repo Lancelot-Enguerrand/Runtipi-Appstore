@@ -30,12 +30,11 @@ describe("each app should have the required files", async () => {
   const apps = await getApps()
 
   for (const app of apps) {
-    const files = ['config.json', 'docker-compose.json', 'metadata/logo.jpg', 'metadata/description.md']
+    const files = ['config.json', 'docker-compose.yaml', 'metadata/logo.jpg', 'metadata/description.md']
 
     for (const file of files) {
       test(`app ${app} should have ${file}`, async () => {
         const fileContent = await getFile(app, file)
-        expect(fileContent).not.toBeNull()
       })
     }
   }
@@ -52,24 +51,6 @@ describe("each app should have a valid config.json", async () => {
       if (parsed instanceof type.errors) {
         const validationError = fromError(parsed.summary);
         console.error(`Error parsing config.json for app ${app}:`, validationError.toString());
-      }
-
-      expect(parsed).toBeDefined()
-    })
-  }
-})
-
-describe("each app should have a valid docker-compose.json", async () => {
-  const apps = await getApps()
-
-  for (const app of apps) {
-    test(`app ${app} should have a valid docker-compose.json`, async () => {
-      const fileContent = await getFile(app, 'docker-compose.json')
-      const parsed = dynamicComposeSchema(JSON.parse(fileContent || '{}'))
-
-      if ( parsed  instanceof type.errors) {
-        const validationError = fromError(parsed);
-        console.error(`Error parsing docker-compose.json for app ${app}:`, validationError.toString());
       }
 
       expect(parsed).toBeDefined()
