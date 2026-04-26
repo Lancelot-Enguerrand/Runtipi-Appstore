@@ -1,0 +1,30 @@
+services:
+  docuseal:
+    image: 'docuseal/docuseal:2.5.0'
+    volumes:
+      - '${APP_DATA_DIR}/data/app/docuseal:/data/docuseal'
+    environment:
+      - 'HOST=${APP_DOMAIN}'
+      - 'DATABASE_URL=postgresql://docuseal:${DOCUSEAL_DB_PASSWORD}@docuseal-db:5432/docuseal'
+      - 'SECRET_KEY_BASE=${DOCUSEAL_SECRET_KEY}'
+    depends_on:
+      docuseal-db:
+        condition: 'service_healthy'
+    x-runtipi:
+      internal_port: 3000
+      is_main: true
+  docuseal-db:
+    image: 'postgres:15'
+    volumes:
+      - '${APP_DATA_DIR}/data/app/pg_data:/var/lib/postgresql/data'
+    environment:
+      - 'POSTGRES_USER=docuseal'
+      - 'POSTGRES_PASSWORD=${DOCUSEAL_DB_PASSWORD}'
+      - 'POSTGRES_DB=docuseal'
+    healthcheck:
+      test: 'pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER'
+      interval: '5s'
+      timeout: '5s'
+      retries: 5
+x-runtipi:
+  schema_version: 2

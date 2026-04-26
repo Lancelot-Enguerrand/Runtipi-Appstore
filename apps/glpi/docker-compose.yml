@@ -1,0 +1,30 @@
+services:
+  glpi:
+    image: 'ghcr.io/glpi-project/glpi:11.0.6'
+    volumes:
+      - '${APP_DATA_DIR}/data/glpi:/var/glpi'
+    environment:
+      - 'GLPI_DB_HOST=glpi-db'
+      - 'GLPI_DB_PORT=3306'
+      - 'GLPI_DB_NAME=glpi'
+      - 'GLPI_DB_USER=glpi'
+      - 'GLPI_DB_PASSWORD=${GLPI_DB_PASSWORD}'
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+  glpi-db:
+    image: 'mysql:9'
+    volumes:
+      - '${APP_DATA_DIR}/data/db:/var/lib/mysql'
+    environment:
+      - 'MYSQL_RANDOM_ROOT_PASSWORD=yes'
+      - 'MYSQL_DATABASE=glpi'
+      - 'MYSQL_USER=glpi'
+      - 'MYSQL_PASSWORD=${GLPI_DB_PASSWORD}'
+    healthcheck:
+      test: 'mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD'
+      interval: '5s'
+      timeout: '5s'
+      retries: 10
+x-runtipi:
+  schema_version: 2
