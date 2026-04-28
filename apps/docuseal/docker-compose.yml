@@ -1,6 +1,6 @@
 services:
   docuseal:
-    image: 'docuseal/docuseal:2.5.0'
+    image: 'docuseal/docuseal:2.5.1'
     volumes:
       - '${APP_DATA_DIR}/data/app/docuseal:/data/docuseal'
     environment:
