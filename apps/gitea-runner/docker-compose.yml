@@ -1,6 +1,6 @@
 services:
   gitea-runner:
-    image: 'docker.gitea.com/act_runner:0.4.1'
+    image: 'docker.gitea.com/act_runner:0.5.0'
     volumes:
       - '${APP_DATA_DIR}/data/config:/config'
       - '${APP_DATA_DIR}/data/data:/data'
