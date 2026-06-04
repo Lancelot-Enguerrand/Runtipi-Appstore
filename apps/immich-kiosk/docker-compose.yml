@@ -1,6 +1,6 @@
 services:
   immich-kiosk:
-    image: 'ghcr.io/damongolding/immich-kiosk:0.39.0'
+    image: 'ghcr.io/damongolding/immich-kiosk:0.39.1'
     volumes:
       - '${APP_DATA_DIR}/data/config.yaml:/config.yaml'
     environment:
