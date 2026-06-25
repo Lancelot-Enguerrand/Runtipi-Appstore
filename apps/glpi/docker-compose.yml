@@ -1,6 +1,6 @@
 services:
   glpi:
-    image: 'ghcr.io/glpi-project/glpi:11.0.7'
+    image: 'ghcr.io/glpi-project/glpi:11.0.8'
     volumes:
       - '${APP_DATA_DIR}/data/glpi:/var/glpi'
     environment:
