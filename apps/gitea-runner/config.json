@@ -6,8 +6,8 @@
   "exposable": false,
   "dynamic_config": true,
   "id": "gitea-runner",
-  "tipi_version": 16,
-  "version": "2.3.0",
+  "tipi_version": 17,
+  "version": "3.0.0",
   "categories": [
     "development",
     "automation"
@@ -36,6 +36,6 @@
     "amd64"
   ],
   "created_at": 1737452289124,
-  "updated_at": 1785294033062,
+  "updated_at": 1785553252586,
   "min_tipi_version": "4.5.0"
 }
