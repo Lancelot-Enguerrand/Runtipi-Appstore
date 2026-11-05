@@ -7,7 +7,7 @@
   "port": 8130,
   "id": "immich-kiosk",
   "tipi_version": 56,
-  "version": "0.46.0",
+  "version": "0.47.0",
   "categories": [
     "photography",
     "media"
@@ -54,5 +54,5 @@
   ],
   "created_at": 1737452289124,
   "updated_at": 1793844104097,
-  "min_tipi_version": "4.5.0"
+  "min_tipi_version": "4.8.0"
 }
